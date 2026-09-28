@@ -124,6 +124,11 @@ from section 1, check whether they're already in the
 [CRM](https://claude.ai/artifact/GpPuQKyjUQskumXQGoKi1u) so nobody gets pitched
 twice. Add the new ones with status "new".
 
+*2026-09-28:* all 14 prospects in section 1 were checked against the CRM's 1,413
+leads. None were already in it, so all 14 were added (IDs `lead_adlib_000`–`013`)
+with status "new". Their notes hold the ad link, Page link and priority. None has
+an email or phone yet, so get those from their Page or website first.
+
 **Facebook/Instagram DMs can't be used for cold outreach.** Meta only lets a
 business message people who messaged its Page first. Use email or phone for the
 first contact, and use these scripts there.
