@@ -1,6 +1,8 @@
-# Meta Ads Management: Roofing & Landscaping Client Playbook
+# ApexRoofingLeads: Roofing & Landscaping Client Playbook
 
 Research date: 2026-09-28. Source: Meta Ad Library, active US ads.
+Business context (pricing, CRM, cold email status) comes from Harvey's
+`apexroofingleads-business-summary.md`.
 The Ad Library returns only each ad's headline, so open the snapshot link to see
 the full ad (image, body text, form) before you contact anyone.
 
@@ -70,7 +72,8 @@ trust it. As a new agency with no case studies, don't promise numbers you can't 
 up. Compete on things you can actually deliver:
 
 1. **Niche focus:** only roofers and landscapers.
-2. **No long contract:** month to month.
+2. **Paid on results:** 15% of the revenue the ads bring in. No jobs, no fee.
+   Unlike "guaranteed jobs" pitches, the client carries no risk on your fee.
 3. **They own everything:** the ad account, Page and leads stay theirs, and you get
    partner access.
 4. **Speed to lead:** set up instant alerts so they call leads back within 5 minutes.
@@ -95,22 +98,37 @@ What the client provides:
 - Job photos and videos (before/after works best)
 - The ad budget, paid by them directly to Meta
 
-**Suggested pricing to start (adjust to your market):**
+**Pricing (ApexRoofingLeads revenue share):**
 
-| | Founding client (first 3) | Standard |
-|---|---|---|
-| Management fee | $400–$500/mo | $750–$1,200/mo |
-| Suggested ad spend (paid to Meta) | Roofing $30–$50/day · Landscaping $20–$30/day | Same |
-| Contract | Month to month | Month to month |
+| | |
+|---|---|
+| Your fee | 15% of the revenue from jobs the ads generate. No jobs, no fee. |
+| Ad spend | Paid by the client directly to Meta (for example, about $3,000/mo) |
+| Upfront cost | None |
 
-In exchange for the founding-client rate, ask for a testimonial and permission to
-share their results. That gives you the case studies you don't have yet.
+**Before signing anyone, agree on how "revenue the ads generate" is tracked.** The
+lead form captures every lead, so agree that jobs booked from those leads count,
+and ask for a monthly list of closed jobs. Revenue-share deals usually break down
+over attribution, not over the rate.
+
+Ask your first few clients for a testimonial and permission to share their
+results. That gives you the case studies you don't have yet.
 
 ---
 
 ## 4. Outreach scripts
 
-### Cold DM / email (prospect already running ads)
+**Check the CRM first.** Cold email has already reached about 400 of the 758
+targeted CRM leads, and that campaign is paused. Before contacting any prospect
+from section 1, check whether they're already in the
+[CRM](https://claude.ai/artifact/GpPuQKyjUQskumXQGoKi1u) so nobody gets pitched
+twice. Add the new ones with status "new".
+
+**Facebook/Instagram DMs can't be used for cold outreach.** Meta only lets a
+business message people who messaged its Page first. Use email or phone for the
+first contact, and use these scripts there.
+
+### Cold email (prospect already running ads)
 
 > Hi {first name}, I came across {business}'s ad on Facebook ("{their headline}").
 > Good to see you're already running ads. Most contractors aren't.
@@ -124,14 +142,14 @@ share their results. That gives you the case studies you don't have yet.
 >
 > {your name}
 
-### Cold DM / email (prospect not running ads)
+### Cold email (prospect not running ads)
 
 > Hi {first name}, I saw {business} has {X} great Google reviews but isn't running
 > any Facebook ads. Your competitors {competitor name if you know one} are.
 >
-> I run Facebook ads only for roofers and landscapers, month to month, and you keep
-> full ownership of the ad account. Open to a 15-minute call to see if it would work
-> for you?
+> I run Facebook ads only for roofers and landscapers. There's no upfront fee: I take
+> 15% of the revenue from jobs the ads bring in, and nothing if they don't bring any.
+> You keep full ownership of the ad account. Open to a 15-minute call?
 
 ### Follow-up (3–4 days later)
 
@@ -146,9 +164,13 @@ far better than a generic pitch. I can draft these for each prospect.
 ## 5. Advertising your own agency (your account 1106381341794252)
 
 **Blockers before any ad can run:**
-1. **No Facebook Page.** Every Meta ad runs from a Page. Create a business Page for
-   your agency first.
+1. **No Facebook Page.** Every Meta ad runs from a Page. The Facebook login
+   (Joshua Casper-Phipps) manages zero Pages. Harvey found the same thing, so
+   there's no existing Page to connect. Create an ApexRoofingLeads business Page.
 2. **No payment method** on the ad account.
+
+Harvey drafted a similar campaign: $30/day, job-title and interest targeting,
+3 copy variants. Pick one plan before building so the budget isn't split.
 
 **Draft campaign (I'll build it paused once both are fixed):**
 
@@ -163,15 +185,15 @@ far better than a generic pitch. I can draft these for each prospect.
 
 A. Headline: "Roofers: Fill Your Fall Schedule"
 > Fall is roof season. I run Facebook and Instagram ads for roofers only.
-> Month to month, and you own the account. Get a free ad plan for your business.
+> No upfront fee: I get paid 15% of the jobs the ads bring in. Get a free ad plan.
 
 B. Headline: "Landscapers: Book Spring Jobs Now"
 > The landscapers with a full spring calendar start booking in the fall.
-> I run Facebook ads just for landscaping companies. Free ad plan, no contract.
+> I run Facebook ads just for landscaping companies. No jobs, no fee.
 
 C. Headline: "Running Facebook Ads Yourself?"
 > Boosted posts and "free estimate" ads usually waste money. I manage Meta ads
-> for roofers and landscapers. Weekly reports, no long contract. Get a free audit
-> of your current ads.
+> for roofers and landscapers, and I only get paid when the ads bring you jobs.
+> Get a free audit of your current ads.
 
 CTA: Get Quote / Learn More
