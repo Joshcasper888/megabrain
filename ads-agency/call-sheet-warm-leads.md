@@ -1,5 +1,7 @@
 # Warm Leads Call Sheet
 
+> **Status 9/28 night:** Josh called all of these on 9/28. Use this sheet for second attempts only; today's new calls are in `call-sheet-2026-09-29-email-followup.md`.
+
 All 59 warm leads: businesses running weak Facebook ads right now. The list starts
 in the east and moves west, so you can dial all day and catch each business around
 7–9 AM its local time, when the owner often picks up. Alaska and Hawaii are at the end
