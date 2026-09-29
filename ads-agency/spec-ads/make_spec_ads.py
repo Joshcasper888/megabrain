@@ -127,6 +127,20 @@ COMPANIES = [
                   body="Branches down? Tree on the fence? \U0001F327️\n\nWe handle storm cleanup, tree removal and brush chipping fast, so your yard is safe again.\n\n\U0001F333 \"Climbing to exceed expectations daily\"\n✅ Fully insured\n\nTap below and we'll call you back today.",
                   headline="Fast Storm Cleanup, Free Quote", cta="Get quote"),
          ]),
+    dict(slug="eml-services", name="EML Services", initials="EML", color="#1f5f8b",
+         domain="Danbury, CT", owner="EML Services", title="3 draft Facebook ads",
+         ads=[
+             dict(label="Ad 1: Fall cleanup", art="yard", banner="FALL CLEANUP – BOOK NOW",
+                  body="Leaves, beds, last mow, gutters cleared. \U0001F342\n\nGet your yard winter-ready before the first freeze. Fall cleanup spots in Danbury fill fast.\n\n✅ Full-service landscaping, tree work & masonry\n\U0001F4CD Danbury & nearby towns\n\nTap below to get on the schedule. \U0001F447",
+                  headline="Book Your Fall Cleanup", cta="Get quote"),
+             dict(label="Ad 2: Patio & stonework (book for spring)", art="yard", banner="NEW PATIO BY SUMMER?", fs=20,
+                  body="Patios, walkways, walls and steps built to last through New England winters. \U0001F9F1\n\nPlan it this fall, and you're first on the build schedule in spring.\n\n✅ Masonry + landscaping, one crew\n\nTap below for a free design estimate.",
+                  headline="Free Patio & Masonry Estimate", cta="Get quote"),
+             dict(label="Ad 3: Tree work before winter", art="tree", banner="TAKE CARE OF RISKY TREES BEFORE SNOW",
+                  sky="#9fb7cc", leaf="#5b7f3a", fs=16,
+                  body="Heavy snow + a dead limb over your roof = an expensive January. \U0001F328️\n\nPruning, trimming and removal, done safely before the storms hit.\n\n\U0001F4CD Danbury & nearby towns\n\nTap below for a free estimate.",
+                  headline="Free Tree Work Estimate", cta="Get quote"),
+         ]),
 ]
 
 CSS = """
