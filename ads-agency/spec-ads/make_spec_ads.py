@@ -141,6 +141,19 @@ COMPANIES = [
                   body="Heavy snow + a dead limb over your roof = an expensive January. \U0001F328️\n\nPruning, trimming and removal, done safely before the storms hit.\n\n\U0001F4CD Danbury & nearby towns\n\nTap below for a free estimate.",
                   headline="Free Tree Work Estimate", cta="Get quote"),
          ]),
+    dict(slug="nature-bound-garden", name="Nature Bound Garden Landscaping", initials="NB", color="#2f6b2a",
+         domain="South Shore, MA", owner="Nature Bound Garden Landscaping", title="3 draft Facebook ads",
+         ads=[
+             dict(label="Ad 1: Fall cleanup", art="yard", banner="SOUTH SHORE FALL CLEANUPS",
+                  body="Leaves, beds, last mow, everything hauled away. \U0001F342\n\nGet your yard winter-ready before the first freeze. Family owned, serving Weymouth, Braintree, Hingham and the South Shore.\n\nTap below to get on the fall schedule. \U0001F447",
+                  headline="Book Your Fall Cleanup", cta="Get quote"),
+             dict(label="Ad 2: Design & build (book for spring)", art="yard", banner="YOUR DREAM YARD BY SPRING",
+                  body="Patios, plantings, walkways and full yard makeovers, designed this winter and built first thing in spring. \U0001F331\n\n15+ years of design & construction on the South Shore.\n\nTap below for a free design consult.",
+                  headline="Free Landscape Design Consult", cta="Get quote"),
+             dict(label="Ad 3: Trust / local", art="yard", banner="FAMILY OWNED · SOUTH SHORE", fs=19,
+                  body="A local family crew that shows up when they say, cleans up every time, and treats your yard like their own. \U0001F3E1\n\nWeymouth · Braintree · Hingham · Cohasset · Norwell · Hanover\n\nTap below for a free, no-pressure estimate.",
+                  headline="Free, No-Pressure Estimate", cta="Get quote"),
+         ]),
 ]
 
 CSS = """
