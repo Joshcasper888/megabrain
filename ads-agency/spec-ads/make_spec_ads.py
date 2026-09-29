@@ -1,0 +1,171 @@
+"""Build phone-sized "I fixed your ad" spec mockups for warm leads.
+
+Each company gets one HTML page (current-ad problem + 2 fixed drafts) and a PNG
+per fixed ad, rendered with Playwright. Drafts only; nothing here is live.
+"""
+import html
+import pathlib
+import subprocess
+
+OUT = pathlib.Path(__file__).parent
+
+ROOF_SVG = """<svg class="img" viewBox="0 0 500 300" role="img" aria-label="{alt}">
+<defs><linearGradient id="g{n}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{sky1}"/><stop offset="1" stop-color="{sky2}"/></linearGradient></defs>
+<rect width="500" height="300" fill="url(#g{n})"/>
+<polygon points="60,170 250,60 440,170" fill="{roof}"/>
+<rect x="95" y="170" width="310" height="130" fill="{wall}"/>
+<rect x="140" y="200" width="60" height="50" fill="#7da2c4" stroke="#fff" stroke-width="4"/>
+<rect x="300" y="200" width="60" height="50" fill="#7da2c4" stroke="#fff" stroke-width="4"/>
+<rect x="225" y="215" width="50" height="85" fill="#6b4a33"/>{extra}
+<rect x="0" y="0" width="500" height="44" fill="rgba(0,0,0,.5)"/>
+<text x="250" y="29" fill="#fff" font-size="{fs}" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif">{banner}</text>
+</svg>"""
+
+YARD_SVG = """<svg class="img" viewBox="0 0 500 300" role="img" aria-label="{alt}">
+<rect width="500" height="300" fill="#bcd9ef"/>
+<rect y="190" width="500" height="110" fill="#5f9e4a"/>
+<rect x="150" y="110" width="200" height="90" fill="#e8dcc6"/>
+<polygon points="140,112 250,55 360,112" fill="#4a4f57"/>
+<rect x="232" y="145" width="36" height="55" fill="#6b4a33"/>
+<path d="M150 230 C 200 205, 300 205, 350 230" stroke="#c9b28f" stroke-width="22" fill="none"/>
+<g fill="#3f7d34"><circle cx="90" cy="180" r="34"/><circle cx="410" cy="178" r="38"/><circle cx="130" cy="205" r="16"/><circle cx="375" cy="207" r="16"/></g>
+<g fill="#e3703a"><circle cx="175" cy="205" r="7"/><circle cx="195" cy="208" r="7"/><circle cx="305" cy="208" r="7"/><circle cx="325" cy="205" r="7"/></g>
+<rect x="0" y="0" width="500" height="44" fill="rgba(0,0,0,.5)"/>
+<text x="250" y="29" fill="#fff" font-size="{fs}" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif">{banner}</text>
+</svg>"""
+
+STARS = '<g fill="#f5b50a">' + "".join(
+    f'<polygon transform="translate({x},{y})" points="12,0 15.6,8 24,8.8 17.6,14.4 19.6,23.2 12,18.4 4.4,23.2 6.4,14.4 0,8.8 8.4,8"/>'
+    for x, y in [(170, 245), (200, 245), (230, 245), (260, 245), (290, 245)]) + "</g>"
+
+SNOW = '<g fill="#fff">' + "".join(
+    f'<circle cx="{x}" cy="{y}" r="3"/>' for x, y in [(40, 60), (120, 80), (330, 70), (460, 90), (410, 55), (200, 75)]) + \
+    '</g><polygon points="60,170 250,60 440,170 425,170 250,72 75,170" fill="#fff"/>'
+
+COMPANIES = [
+    dict(slug="fbc-roofing", name="FBC Roofing", initials="FBC", color="#0b5c8e",
+         domain="fbc-hawaii.com", owner="David",
+         problem="Your live ads show the headline <b>“{{product.name}}”</b>. It's a template placeholder that never got filled in, so every person who sees the ad sees broken text instead of an offer. It's been running like that since about March.",
+         ads=[
+             dict(label="Fix 1: Free inspection", art="roof", banner="FREE ROOF CHECK ON OAHU", sky=("#f6c177", "#fbe3c0"), extra="",
+                  body="Oahu sun and salt are hard on roofs. ☀️\U0001F30A\n\nWe'll get up there, photograph everything, and tell you straight: repair, replace, or leave it alone.\n\n⭐ 54+ Yelp reviews\n\U0001F4CD Honolulu & all of Oahu\n\nBook your free roof check below. \U0001F447",
+                  headline="Free Roof Check + Photo Report", cta="Get quote"),
+             dict(label="Fix 2: Reviews", art="roof", banner="OAHU TRUSTS FBC ROOFING", sky=("#8fc5e8", "#dff0fa"), extra=STARS,
+                  body="Honolulu homeowners have left FBC 54+ reviews on Yelp. ⭐⭐⭐⭐⭐\n\nLocal crew. Straight answers. A roof built for island weather.\n\nTap below for a free estimate.",
+                  headline="Free Estimate From a Local Oahu Roofer", cta="Get quote"),
+         ]),
+    dict(slug="jt-elite-landscaping", name="JT Elite Landscaping", initials="JT", color="#2f6b2a",
+         domain="jtelitelandscaping.com", owner="the owner",
+         problem="Your Facebook ad's headline shows <b>“{{product.name}}”</b>. It's a template that never got filled in, so the ad shows broken text instead of your work. It looks like it's been running since about March.",
+         ads=[
+             dict(label="Fix 1: Fall to spring pre-booking", art="yard", banner="WANT A NEW YARD BY SPRING?",
+                  body="The best landscapers in the Seattle area are booked solid by April. \U0001F331\n\nGet your design done this fall and winter, and you're first on the install schedule in spring.\n\n✅ Design, install & maintenance\n\U0001F4CD Seattle area\n\nTap below for a free design consult.",
+                  headline="Free Design Consult, Book Spring Now", cta="Get quote"),
+             dict(label="Fix 2: Fall cleanup", art="yard", banner="FALL CLEANUP – BOOK NOW",
+                  body="Leaves, beds, final mow, gutters cleared. \U0001F342\n\nGet your yard winter-ready before the rain sets in. Spots fill fast in October.\n\nTap below to get on the schedule.",
+                  headline="Book Your Fall Cleanup", cta="Get quote"),
+         ]),
+    dict(slug="reds-roofing", name="Reds Roofing & Renovations", initials="RR", color="#b3261e",
+         domain="redsroofingak.com", owner="Karley or Sheldon",
+         problem="Your ad crams <b>6 headlines into one</b>: “Alaska Tough Roofing | Alaska Tough Roofing | Alaska Roofing Done Right | …”. Two of them are the same, and nothing tells people why to call before snow flies.",
+         ads=[
+             dict(label="Fix 1: Beat the snow", art="roof", banner="GET YOUR ROOF CHECKED BEFORE SNOW", sky=("#8fb3d9", "#dfe9f3"), extra=SNOW, fs=18,
+                  body="Anchorage: snow load season is weeks away. ❄️\n\nA small leak now is ice-dam damage by January. We'll inspect, photograph everything, and give you a straight answer.\n\n\U0001F396️ Veteran woman-owned, family-run\n⭐ 4.8 stars on Google\n✅ GAF certified · BBB accredited\n\nBook your free roof check below. \U0001F447",
+                  headline="Free Pre-Winter Roof Check", cta="Get quote"),
+             dict(label="Fix 2: Trust", art="roof", banner="VETERAN WOMAN-OWNED · GAF CERTIFIED", sky=("#1f2a36", "#3b4a5a"), extra=STARS, fs=17,
+                  body="Family-run roofers serving Anchorage and Southeast Alaska.\n\nWe show up when we say we will, clean up every nail, and give you a price you can trust.\n\n⭐ 4.8 stars on Google\n✅ GAF certified · BBB accredited\n\nTap below for a free estimate.",
+                  headline="Free Estimate From Reds Roofing", cta="Get quote"),
+         ]),
+    dict(slug="durafoam-roofing", name="Durafoam Roofing", initials="DF", color="#c2410c",
+         domain="durafoaminc.com", owner="Tim or Curtis",
+         problem="Your roofing ad has <b>no headline at all</b>. People see a picture and scroll past, because nothing tells them what you're offering or why to call now.",
+         ads=[
+             dict(label="Fix 1: Monsoon damage check", art="roof", banner="MONSOON HIT YOUR ROOF?", sky=("#6b7b8f", "#c9d3dd"), extra="",
+                  body="Phoenix monsoon season is rough on flat and foam roofs. ⛈️\n\nPonding water, cracked coating, lifted edges: small problems now turn into leaks when winter rain hits.\n\n\U0001F3E0 Family-owned in Phoenix since 1989\n✅ Foam, tile, shingle & coatings\n\nBook a free roof check below. \U0001F447",
+                  headline="Free Post-Monsoon Roof Check", cta="Get quote"),
+             dict(label="Fix 2: Recoat vs replace", art="roof", banner="RECOAT BEFORE YOU REPLACE", sky=("#f4a261", "#fde2c4"), extra="",
+                  body="If your foam roof is still solid underneath, a recoat can add years for a fraction of the cost of a new roof. ☀️\n\nWe'll tell you honestly which one you need.\n\n\U0001F3E0 Phoenix's foam roofing family since 1989\n\nTap below for a free estimate.",
+                  headline="Free Foam Roof Estimate", cta="Get quote"),
+         ]),
+    dict(slug="cc-services", name="C&C Services", initials="C&C", color="#1d4ed8",
+         domain="Schofield / Wausau, WI", owner="Cody",
+         problem="You're running <b>12 ads with only 4 headlines</b>, each copied 3 times, so Meta is splitting your budget instead of testing anything. And one says <b>“Now booking for September and October”</b>, which is already out of date.",
+         ads=[
+             dict(label="Fix 1: Beat the snow", art="roof", banner="ROOF CHECK BEFORE THE SNOW", sky=("#8fb3d9", "#dfe9f3"), extra=SNOW,
+                  body="Central Wisconsin: first snow is close. ❄️\n\nStorm damage you can't see from the ground turns into ice dams and leaks by January. We'll inspect, photograph everything, and help with your insurance claim if it's covered.\n\n✅ GAF certified, 15+ years\n\U0001F4CD Wausau, Schofield & nearby\n\nBook your free inspection below. \U0001F447",
+                  headline="Free Storm Damage Inspection", cta="Get quote"),
+             dict(label="Fix 2: Now booking November", art="roof", banner="NOW BOOKING NOVEMBER", sky=("#c07a3e", "#f1d2ae"), extra="",
+                  body="Still need a new roof before winter? We have a few November spots left. \U0001F3E0\n\nInsurance help included, so we handle the paperwork with your adjuster.\n\n✅ GAF certified, 15+ years in Central Wisconsin\n\nTap below to grab a spot.",
+                  headline="Get on the November Schedule", cta="Get quote"),
+         ]),
+]
+
+CSS = """
+:root{--bg:#f0f2f5;--card:#fff;--text:#050505;--muted:#65676b;--btn:#e4e6eb;--tag:#fff4d6;--tagtext:#7a5500;--bad:#fde8e8;--badtext:#8a1c1c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#18191a;--card:#242526;--text:#e4e6eb;--muted:#b0b3b8;--btn:#3a3b3c;--tag:#3d3320;--tagtext:#ffd780;--bad:#3a1f1f;--badtext:#ffb4b4}}
+:root[data-theme="dark"]{--bg:#18191a;--card:#242526;--text:#e4e6eb;--muted:#b0b3b8;--btn:#3a3b3c;--tag:#3d3320;--tagtext:#ffd780;--bad:#3a1f1f;--badtext:#ffb4b4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:500px;margin:0 auto;padding:16px}h1{font-size:18px;margin:4px 0 2px}.sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+.problem{background:var(--bad);color:var(--badtext);border-radius:10px;padding:12px;font-size:14px}
+.label{display:inline-block;background:var(--tag);color:var(--tagtext);font-size:12px;font-weight:600;padding:3px 8px;border-radius:6px;margin:18px 0 8px}
+.post{background:var(--card);border-radius:10px;box-shadow:0 1px 2px rgba(0,0,0,.15);overflow:hidden}
+.head{display:flex;gap:10px;align-items:center;padding:12px 12px 6px}.avatar{width:40px;height:40px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.name{font-weight:600}.meta{color:var(--muted);font-size:12px}.body{padding:4px 12px 10px;white-space:pre-line}.img{display:block;width:100%;height:auto}
+.cta{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg)}.cta .txt{flex:1;min-width:0}.domain{color:var(--muted);font-size:12px;text-transform:uppercase}
+.headline{font-weight:600}.btn{background:var(--btn);font-weight:600;font-size:14px;padding:8px 12px;border-radius:6px;white-space:nowrap}
+.foot{color:var(--muted);font-size:12px;margin-top:20px}
+"""
+
+
+def art(ad, n):
+    if ad["art"] == "yard":
+        return YARD_SVG.format(alt=html.escape(ad["banner"]), banner=html.escape(ad["banner"]), fs=ad.get("fs", 20))
+    s1, s2 = ad["sky"]
+    return ROOF_SVG.format(n=n, alt=html.escape(ad["banner"]), banner=html.escape(ad["banner"]), fs=ad.get("fs", 20),
+                           sky1=s1, sky2=s2, roof="#3b3f46", wall="#c9b79c", extra=ad["extra"])
+
+
+def page(c):
+    posts = []
+    for i, ad in enumerate(c["ads"]):
+        posts.append(f"""<span class="label">{html.escape(ad['label'])}</span>
+<article class="post"><div class="head"><div class="avatar" style="background:{c['color']}">{html.escape(c['initials'])}</div>
+<div><div class="name">{html.escape(c['name'])}</div><div class="meta">Sponsored · \U0001F310</div></div></div>
+<div class="body">{html.escape(ad['body'])}</div>{art(ad, i)}
+<div class="cta"><div class="txt"><div class="domain">{html.escape(c['domain'])}</div><div class="headline">{html.escape(ad['headline'])}</div></div><div class="btn">{ad['cta']}</div></div></article>""")
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(c['name'])} Spec Ads</title><style>{CSS}</style></head><body><main>
+<h1>{html.escape(c['name'])}: 2 fixed Facebook ads</h1>
+<p class="sub">Drafts by ApexLeads for {html.escape(c['owner'])}. Not live, and nothing runs without your approval.</p>
+<div class="problem"><b>What's wrong with your current ad:</b> {c['problem']}</div>
+{''.join(posts)}
+<p class="foot">"Get quote" opens a short form: Do you own the home? What do you need? Zip code, name, phone. Leads go straight to your phone.</p>
+</main></body></html>"""
+
+
+SHOT_JS = """
+const { chromium } = require('playwright');
+(async () => {
+  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' }).catch(() => chromium.launch());
+  const p = await b.newPage({ viewport: { width: 430, height: 900 }, deviceScaleFactor: 2, colorScheme: 'light' });
+  for (const slug of process.argv.slice(2)) {
+    await p.goto('file://' + __OUT__ + '/' + slug + '.html');
+    const posts = await p.$$('article.post');
+    for (let i = 0; i < posts.length; i++) await posts[i].screenshot({ path: __OUT__ + '/' + slug + '-ad' + (i + 1) + '.png' });
+    const prob = await p.$('.problem');
+    await prob.screenshot({ path: __OUT__ + '/' + slug + '-problem.png' });
+  }
+  await b.close();
+})();
+"""
+
+if __name__ == "__main__":
+    for c in COMPANIES:
+        (OUT / f"{c['slug']}.html").write_text(page(c), encoding="utf-8")
+    js = OUT / "_shot.js"
+    js.write_text(SHOT_JS.replace("__OUT__", repr(str(OUT))))
+    try:
+        subprocess.run(["node", str(js), *[c["slug"] for c in COMPANIES]], check=True,
+                       env={**__import__("os").environ, "NODE_PATH": subprocess.check_output(["npm", "root", "-g"], text=True).strip()})
+    finally:
+        js.unlink()
