@@ -103,7 +103,7 @@ What the client provides:
 | | |
 |---|---|
 | Your fee | 15% of the revenue from jobs the ads generate. No jobs, no fee. |
-| Ad spend | Paid by the client directly to Meta (for example, about $3,000/mo) |
+| Ad spend | Paid by the client directly to Meta (most start around $20–50/day) |
 | Upfront cost | None |
 
 **Before signing anyone, agree on how "revenue the ads generate" is tracked.** The
