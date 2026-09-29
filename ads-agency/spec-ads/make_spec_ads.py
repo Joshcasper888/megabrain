@@ -170,6 +170,20 @@ COMPANIES = [
                   body="Don't get stuck digging out after the first big storm. ❄️\n\nSign up now for reliable snow removal from a local Falmouth crew, for homes and businesses.\n\nTap below to reserve your spot for the season.",
                   headline="Reserve Your Snow Removal Spot", cta="Get quote"),
          ]),
+    dict(slug="everest207", name="Everest207 Landscaping", initials="E207", color="#1f4f6b",
+         domain="Wells, ME", owner="Michael", title="3 draft Facebook ads",
+         problem="You're running <b>the same ad 6 times</b>, and the headline is just <b>“Everest207 Landscaping”</b>. There's no offer and no reason to act now, so Meta splits your budget across copies instead of testing anything.",
+         ads=[
+             dict(label="Ad 1: Fall cleanup", art="yard", banner="FALL CLEANUP – BOOK BEFORE THE FREEZE", fs=17,
+                  body="Leaves, beds, last mow, everything hauled away. \U0001F342\n\nGet your yard winter-ready before the first freeze. Fall cleanup spots in Wells, the Kennebunks and York fill fast.\n\n⭐ 5.0 on Angi · fully insured\n\U0001F4CD Southern Maine\n\nTap below to get on the schedule. \U0001F447",
+                  headline="Book Your Fall Cleanup", cta="Get quote"),
+             dict(label="Ad 2: Patio & hardscape (book for spring)", art="yard", banner="NEW PATIO BY SUMMER?", fs=20,
+                  body="Patios, walkways, retaining walls and stone steps, built to handle Maine winters. \U0001F9F1\n\nDesign it this fall and you're first on our build schedule in spring. Book before the new year and get early-bird pricing.\n\n\"The quality of the patio was beyond my expectations.\" – Google review\n\nTap below for a free design estimate.",
+                  headline="Free Patio & Hardscape Estimate", cta="Get quote"),
+             dict(label="Ad 3: Reviews / trust", art="yard", banner="SOUTHERN MAINE TRUSTS EVEREST207", fs=18,
+                  body="Local crew. Shows up on time. Leaves your yard better than they found it. \U0001F3E1\n\n⭐ 5.0 on Angi · 100% recommended\n✅ Landscaping, hardscaping, stump removal & drainage\n\U0001F4CD Wells · Kennebunk · Ogunquit · York · Sanford\n\nTap below for a free, no-pressure estimate.",
+                  headline="Free, No-Pressure Estimate", cta="Get quote"),
+         ]),
 ]
 
 CSS = """
