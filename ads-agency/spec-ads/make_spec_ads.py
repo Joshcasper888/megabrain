@@ -34,6 +34,19 @@ YARD_SVG = """<svg class="img" viewBox="0 0 500 300" role="img" aria-label="{alt
 <text x="250" y="29" fill="#fff" font-size="{fs}" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif">{banner}</text>
 </svg>"""
 
+TREE_SVG = """<svg class="img" viewBox="0 0 500 300" role="img" aria-label="{alt}">
+<rect width="500" height="300" fill="{sky}"/>
+<rect y="215" width="500" height="85" fill="#6f9a4c"/>
+<rect x="300" y="150" width="150" height="75" fill="#e8dcc6"/>
+<polygon points="290,152 375,100 460,152" fill="#4a4f57"/>
+<rect x="228" y="120" width="26" height="100" fill="#6b4a33"/>
+<path d="M241 150 L205 110 M241 135 L285 95" stroke="#6b4a33" stroke-width="10" stroke-linecap="round"/>
+<g fill="{leaf}"><circle cx="241" cy="95" r="55"/><circle cx="195" cy="115" r="38"/><circle cx="290" cy="105" r="40"/></g>
+<g fill="#d9822b"><circle cx="120" cy="240" r="6"/><circle cx="140" cy="250" r="5"/><circle cx="90" cy="252" r="6"/><circle cx="165" cy="238" r="5"/></g>{extra}
+<rect x="0" y="0" width="500" height="44" fill="rgba(0,0,0,.5)"/>
+<text x="250" y="29" fill="#fff" font-size="{fs}" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif">{banner}</text>
+</svg>"""
+
 STARS = '<g fill="#f5b50a">' + "".join(
     f'<polygon transform="translate({x},{y})" points="12,0 15.6,8 24,8.8 17.6,14.4 19.6,23.2 12,18.4 4.4,23.2 6.4,14.4 0,8.8 8.4,8"/>'
     for x, y in [(170, 245), (200, 245), (230, 245), (260, 245), (290, 245)]) + "</g>"
@@ -98,6 +111,22 @@ COMPANIES = [
                   body="Still need a new roof before winter? We have a few November spots left. \U0001F3E0\n\nInsurance help included, so we handle the paperwork with your adjuster.\n\n✅ GAF certified, 15+ years in Central Wisconsin\n\nTap below to grab a spot.",
                   headline="Get on the November Schedule", cta="Get quote"),
          ]),
+    dict(slug="premium-tree-landscape", name="Premium Tree & Landscape", initials="PT", color="#2f6b2a",
+         domain="premiumtreeandlandscape.com", owner="Charlie", title="3 draft Facebook ads",
+         ads=[
+             dict(label="Ad 1: Tree removal before winter", art="tree", banner="GET RISKY TREES DOWN BEFORE WINTER",
+                  sky="#9fb7cc", leaf="#5b7f3a", fs=17,
+                  body="Nor'easter season is coming. \U0001F32C️\n\nThat dead limb over your roof or driveway is a lot cheaper to take down now than after it comes through the ceiling.\n\n\U0001F333 Tree removal, trimming & climbing\n✅ Fully insured\n\U0001F4CD Falmouth & nearby towns\n\nTap below for a free estimate. \U0001F447",
+                  headline="Free Tree Removal Estimate", cta="Get quote"),
+             dict(label="Ad 2: Fall cleanup", art="tree", banner="FALL CLEANUP – BOOK YOUR SPOT", sky="#f1c27d",
+                  leaf="#c96a2b",
+                  body="Leaves, beds, last mow, brush hauled away. \U0001F342\n\nGet your yard winter-ready before the first freeze. Cleanup spots fill fast in October and November.\n\n✅ Fully insured, local crew\n\nTap below to get on the schedule.",
+                  headline="Book Your Fall Cleanup", cta="Get quote"),
+             dict(label="Ad 3: Storm cleanup", art="tree", banner="STORM DAMAGE? WE'LL CLEAN IT UP", sky="#6b7b8f",
+                  leaf="#3f7d34", fs=18,
+                  body="Branches down? Tree on the fence? \U0001F327️\n\nWe handle storm cleanup, tree removal and brush chipping fast, so your yard is safe again.\n\n\U0001F333 \"Climbing to exceed expectations daily\"\n✅ Fully insured\n\nTap below and we'll call you back today.",
+                  headline="Fast Storm Cleanup, Free Quote", cta="Get quote"),
+         ]),
 ]
 
 CSS = """
@@ -118,6 +147,9 @@ main{max-width:500px;margin:0 auto;padding:16px}h1{font-size:18px;margin:4px 0 2
 
 
 def art(ad, n):
+    if ad["art"] == "tree":
+        return TREE_SVG.format(alt=html.escape(ad["banner"]), banner=html.escape(ad["banner"]), fs=ad.get("fs", 20),
+                               sky=ad.get("sky", "#bcd9ef"), leaf=ad.get("leaf", "#3f7d34"), extra=ad.get("extra", ""))
     if ad["art"] == "yard":
         return YARD_SVG.format(alt=html.escape(ad["banner"]), banner=html.escape(ad["banner"]), fs=ad.get("fs", 20))
     s1, s2 = ad["sky"]
@@ -135,9 +167,9 @@ def page(c):
 <div class="cta"><div class="txt"><div class="domain">{html.escape(c['domain'])}</div><div class="headline">{html.escape(ad['headline'])}</div></div><div class="btn">{ad['cta']}</div></div></article>""")
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(c['name'])} Spec Ads</title><style>{CSS}</style></head><body><main>
-<h1>{html.escape(c['name'])}: 2 fixed Facebook ads</h1>
+<h1>{html.escape(c['name'])}: {c.get('title', '2 fixed Facebook ads')}</h1>
 <p class="sub">Drafts by ApexLeads for {html.escape(c['owner'])}. Not live, and nothing runs without your approval.</p>
-<div class="problem"><b>What's wrong with your current ad:</b> {c['problem']}</div>
+{f'<div class="problem"><b>What' + chr(39) + f's wrong with your current ad:</b> {c["problem"]}</div>' if c.get('problem') else ''}
 {''.join(posts)}
 <p class="foot">"Get quote" opens a short form: Do you own the home? What do you need? Zip code, name, phone. Leads go straight to your phone.</p>
 </main></body></html>"""
@@ -153,13 +185,16 @@ const { chromium } = require('playwright');
     const posts = await p.$$('article.post');
     for (let i = 0; i < posts.length; i++) await posts[i].screenshot({ path: __OUT__ + '/' + slug + '-ad' + (i + 1) + '.png' });
     const prob = await p.$('.problem');
-    await prob.screenshot({ path: __OUT__ + '/' + slug + '-problem.png' });
+    if (prob) await prob.screenshot({ path: __OUT__ + '/' + slug + '-problem.png' });
   }
   await b.close();
 })();
 """
 
 if __name__ == "__main__":
+    import sys
+    if sys.argv[1:]:
+        COMPANIES = [c for c in COMPANIES if c["slug"] in sys.argv[1:]]
     for c in COMPANIES:
         (OUT / f"{c['slug']}.html").write_text(page(c), encoding="utf-8")
     js = OUT / "_shot.js"
