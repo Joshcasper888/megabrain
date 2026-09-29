@@ -4,29 +4,33 @@ What to do from the moment a client says yes, so the first leads arrive within d
 
 ---
 
-## 1. Onboarding checklist (send to the client the day they sign)
+## 1. Onboarding: the day a client says yes
 
-**From the client:**
-- [ ] **Ad account access:** add ApexRoofingLeads as a partner (Business Settings →
-      Accounts → Ad accounts → Assign partners), or add Josh as an advertiser on the
-      account. They keep their own card on file.
-- [ ] **Page access:** Josh added to their Facebook Page with ad permissions.
-- [ ] **10–20 job photos or videos:** before/after works best, taken on a phone. Real
-      beats stock.
-- [ ] **Service area:** list of zip codes or towns, plus the radius they'll drive.
-- [ ] **Jobs they want more of** (for example: full replacements over repairs; hardscape over mowing).
-- [ ] **Offer they're comfortable with** (for example: free inspection with photo
-      report, $X off, free gutter guards with a new roof).
-- [ ] **Who gets leads**, and on what phone/email.
-- [ ] Signed revenue-share terms (see sales kit, section 4).
+**Send the client** [`client-onboarding.pdf`](client-onboarding.pdf) (client-facing, one page).
+It covers ad account access, Page access, and the photos and info we need.
 
-**Apex does on day 1–2:**
-- [ ] Confirm the client's account shows up in Claude's Meta Ads connection.
-- [ ] Build the campaign below **paused**, send the client the preview link.
-- [ ] Set up instant lead alerts (Meta Business Suite notifications on the owner's phone
-      at minimum).
-- [ ] Add the client to the CRM with status "client".
-- [ ] Go live after the client approves.
+**Text to send with it:**
+> "Awesome, [Name]. Two things to get started: (1) the trial agreement, sign and send
+> it back, and (2) this 10-minute setup sheet so I can get into your ad account. Once
+> I'm in, I'll have your ads built for you to approve within 1–2 days."
+
+**Josh, same day:**
+- [ ] Fill in and send `trial-agreement.pdf`. Don't build anything until it's signed.
+- [ ] Send `client-onboarding.pdf`, and put your Google Voice number in the blank at the bottom.
+- [ ] Mark the lead **"client"** in the CRM, with the start date in the notes.
+- [ ] Once they say "done", tell Claude: "[Client] gave access". Claude will:
+  - confirm their ad account and Page show up in the Meta Ads connection
+  - check that their Page has accepted Meta's lead-ad terms. If not, the client
+    clicks "accept" at facebook.com/legal/leadgen/tos (logged in as a Page admin).
+  - build the campaign below **paused**, and send you a preview to show the client
+- [ ] Client approves the preview, and you tell Claude to go live.
+- [ ] Turn on instant lead alerts on the owner's phone (Meta Business Suite app, then
+      Notifications, then Leads).
+- [ ] Put a reminder on your calendar for day 3 (first check-in) and day 30 (trial ends: keep going?).
+
+**If they get stuck on access,** do it together on a 10-minute video call and have
+them share their screen. Menus in Meta move around, so walking them through it live
+beats any written steps.
 
 ---
 
