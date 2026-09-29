@@ -154,6 +154,22 @@ COMPANIES = [
                   body="A local family crew that shows up when they say, cleans up every time, and treats your yard like their own. \U0001F3E1\n\nWeymouth · Braintree · Hingham · Cohasset · Norwell · Hanover\n\nTap below for a free, no-pressure estimate.",
                   headline="Free, No-Pressure Estimate", cta="Get quote"),
          ]),
+    dict(slug="tree-busters", name="Tree Busters of Cape Cod", initials="TB", color="#1f4f2b",
+         domain="Falmouth, MA", owner="Dominic", title="3 draft Facebook ads",
+         ads=[
+             dict(label="Ad 1: Before nor'easter season", art="tree", banner="TAKE DOWN RISKY TREES BEFORE WINTER",
+                  sky="#9fb7cc", leaf="#5b7f3a", fs=16,
+                  body="Nor'easter season on the Cape is coming. \U0001F32C️\n\nThat leaning pine or dead limb over your roof is a lot cheaper to handle now than after the next storm.\n\n\U0001F333 Tree removal & trimming · stump grinding\n\U0001F3E1 Family owned, 30 years combined experience\n\U0001F4CD Falmouth & the Cape\n\nTap below for a free estimate. \U0001F447",
+                  headline="Free Tree Removal Estimate", cta="Get quote"),
+             dict(label="Ad 2: Stump grinding", art="tree", banner="STILL STARING AT THAT STUMP?",
+                  sky="#bcd9ef", leaf="#3f7d34",
+                  body="Old stumps are trip hazards, bug magnets and lawnmower killers. \U0001FAB5\n\nWe grind them below grade so you can plant grass or garden right over the spot.\n\n\U0001F4CD Falmouth & surrounding Cape Cod towns\n\nTap below for a quick quote.",
+                  headline="Stump Grinding, Free Quote", cta="Get quote"),
+             dict(label="Ad 3: Snow removal contracts", art="tree", banner="LOCK IN SNOW REMOVAL NOW", sky="#dfe9f3",
+                  leaf="#2f5f35", fs=19,
+                  body="Don't get stuck digging out after the first big storm. ❄️\n\nSign up now for reliable snow removal from a local Falmouth crew, for homes and businesses.\n\nTap below to reserve your spot for the season.",
+                  headline="Reserve Your Snow Removal Spot", cta="Get quote"),
+         ]),
 ]
 
 CSS = """
