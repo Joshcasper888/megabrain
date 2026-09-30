@@ -1,0 +1,64 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#ddd}
+.ad{width:1080px;height:1080px;position:relative;overflow:hidden;margin-bottom:20px}
+.navy{background:linear-gradient(160deg,#0e2447 0%,#16346a 100%);color:#fff}
+.o{color:#ff6a1a}
+.logo{position:absolute;top:40px;left:56px;background:#fff;border-radius:18px;padding:4px 10px}
+.logo img{width:120px;height:120px;display:block}
+.logo span{font-size:38px;font-weight:800;color:#0e2447}
+.h{position:absolute;left:56px;right:56px;top:196px;font-size:78px;line-height:1.05;font-weight:900;letter-spacing:-1px}
+.cards{position:absolute;left:56px;right:56px;top:410px;display:flex;gap:28px}
+.card{flex:1;background:#fff;color:#111;border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.tag{display:inline-block;font-size:24px;font-weight:800;padding:6px 14px;border-radius:10px;margin-bottom:14px}
+.bad .tag{background:#fde2e2;color:#b91c1c}.good .tag{background:#dcfce7;color:#15803d}
+.pg{display:flex;align-items:center;gap:10px;margin-bottom:10px}.av{width:44px;height:44px;border-radius:50%;background:#2f6b2a;color:#fff;font-weight:800;display:grid;place-items:center;font-size:16px}
+.pn{font-size:22px;font-weight:700}.sp{font-size:16px;color:#777}
+.img{height:150px;border-radius:10px;margin:8px 0;display:grid;place-items:center;font-weight:900;color:#fff;font-size:26px;text-align:center;padding:10px}
+.bad .img{background:#9aa6b2}.good .img{background:linear-gradient(135deg,#3f7d34,#6fae4c)}
+.cta{display:flex;justify-content:space-between;align-items:center;background:#f0f2f5;border-radius:8px;padding:10px 12px}
+.hl{font-size:22px;font-weight:800}.btn{background:#e4e6eb;border-radius:6px;padding:8px 12px;font-weight:700;font-size:18px}
+.bad .hl{color:#b91c1c;text-decoration:line-through}
+.x{font-size:21px;color:#444;margin-top:10px;line-height:1.35}
+.foot{position:absolute;left:0;right:0;bottom:0;background:#ff6a1a;color:#fff;padding:32px 56px;font-size:38px;white-space:nowrap;font-weight:900;display:flex;justify-content:space-between;align-items:center}
+.foot small{font-size:24px;font-weight:700;opacity:.95}
+/* ad 2 */
+.list{position:absolute;left:56px;right:56px;top:540px;font-size:44px;line-height:1.65;font-weight:700}
+.list div::before{content:"✔ ";color:#ff6a1a}
+.big{position:absolute;left:56px;top:200px;right:56px;font-size:96px;font-weight:900;line-height:1.02;letter-spacing:-2px}
+.sub{position:absolute;left:56px;right:56px;top:420px;font-size:34px;color:#c9d6ea;font-weight:600}
+.snow{position:absolute;right:-60px;top:120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#ff6a1a33,transparent 70%)}
+</style></head><body>
+
+<div class="ad navy" id="ad1">
+  <div class="logo"><img src="logo.png"></div>
+  <div class="h">Is your Facebook ad<br><span class="o">actually getting calls?</span></div>
+  <div class="cards">
+    <div class="card bad"><div class="tag">❌ WHAT WE SEE</div>
+      <div class="pg"><div class="av">LC</div><div><div class="pn">Your Landscaping Co.</div><div class="sp">Sponsored</div></div></div>
+      <div class="img">Same photo<br>copied 6 times</div>
+      <div class="cta"><div class="hl">fb.com</div><div class="btn">Learn more</div></div>
+      <div class="x">No offer. No reason to call.<br>Budget split across copies.</div></div>
+    <div class="card good"><div class="tag">✅ WHAT WE BUILD</div>
+      <div class="pg"><div class="av">LC</div><div><div class="pn">Your Landscaping Co.</div><div class="sp">Sponsored</div></div></div>
+      <div class="img">🍂 FALL CLEANUP<br>BOOK BEFORE THE FREEZE</div>
+      <div class="cta"><div class="hl">Book Your Fall Cleanup</div><div class="btn">Get quote</div></div>
+      <div class="x">Real offer + lead form.<br>Leads text straight to your phone.</div></div>
+  </div>
+  <div class="foot"><div>Free ad review for your business</div><small>New England</small></div>
+</div>
+
+<div class="ad navy" id="ad2">
+  
+  <div class="logo"><img src="logo.png"></div>
+  <div class="big">Start spring with a<br><span class="o">full schedule.</span></div>
+  <div class="sub">Facebook ads for New England landscapers &amp; tree companies</div>
+  <div class="list">
+    <div>Leads sent straight to your phone</div>
+    <div>You own your page &amp; ad account</div>
+    <div>Pay per lead, % of jobs, or flat monthly</div>
+    <div>Month to month · no contracts</div>
+  </div>
+  <div class="foot"><div>Get your free ad review →</div><small>Local · Blackstone, MA</small></div>
+</div>
+</body></html>
