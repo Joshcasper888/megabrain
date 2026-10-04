@@ -3,7 +3,7 @@
 Do these in order. Most cost little or nothing. Check prices on the official sites before paying, because fees change.
 
 ## Week 1 (free or close to free)
-- [ ] **Business phone number:** get a free Google Voice number (voice.google.com). Put it on your cards, website, Facebook page and sheet. Keeps your personal cell private.
+- [x] **Business phone number:** (508) 492-9796 (now on your cards, website and service sheet). Add it to your Facebook page too.
 - [ ] **Business email:** keep apexroofingleads1@gmail.com for now. Once you buy a domain, switch to an address like josh@[yourdomain], since "roofing" in the current address doesn't match landscaping.
 - [ ] **Facebook page:** finish the About section, add the phone number and service area, set the profile picture to the logo and the cover photo to the service sheet.
 - [ ] **Facebook ad account appeal:** see `3-email-signature-and-appeal.md`.

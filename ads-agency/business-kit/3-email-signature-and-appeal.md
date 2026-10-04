@@ -6,7 +6,7 @@ In Gmail: **Settings (gear) → See all settings → General → Signature → C
 ```
 Josh Casper-Phipps
 ApexLeads · Facebook ads for New England landscapers
-[business phone] · apexroofingleads1@gmail.com
+(508) 492-9796 · apexroofingleads1@gmail.com
 Blackstone, MA
 ```
 
