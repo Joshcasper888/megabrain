@@ -71,7 +71,7 @@ Hi, this is Josh with ApexLeads in Blackstone. I was looking at Two Rivers Lands
 
 ### ☐ Garran-Teed Property Services · Brewster, MA · (774) 353-0027
 
-Hi Garran, this is Josh with ApexLeads in Blackstone. I was looking at Garran-Teed Property Services's Facebook ads and noticed your ad headline is just the company name with no offer. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
+Hi Garran, this is Josh with ApexLeads in Blackstone. I was looking at Garran-Teed Property Services' Facebook ads and noticed your ad headline is just the company name with no offer. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
 
 ### ☐ Flagg Forestry · (Maine), ME · (207) 578-1056
 
@@ -141,7 +141,7 @@ Hi Christopher, this is Josh with ApexLeads in Blackstone. I was looking at Tip 
 
 ### ☐ Maine Arborworks · Limington, ME · (207) 245-8273
 
-Hi, this is Josh with ApexLeads in Blackstone. I was looking at Maine Arborworks's Facebook ads and noticed the same free-estimate ad has been running since April. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
+Hi, this is Josh with ApexLeads in Blackstone. I was looking at Maine Arborworks' Facebook ads and noticed the same free-estimate ad has been running since April. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
 
 ### ☐ Webster Tree Service · Auburn/Portland, ME · (207) 828-0110
 
@@ -157,7 +157,7 @@ Hi, this is Josh with ApexLeads in Blackstone. I was looking at Osborn Tree Serv
 
 ### ☐ Wood Haven Tree Services · Johnston, RI · (401) 226-4821
 
-Hi Manuel, this is Josh with ApexLeads in Blackstone. I was looking at Wood Haven Tree Services's Facebook ads and noticed your ad is pretty generic and doesn't give people a reason to call now. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
+Hi Manuel, this is Josh with ApexLeads in Blackstone. I was looking at Wood Haven Tree Services' Facebook ads and noticed your ad is pretty generic and doesn't give people a reason to call now. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
 
 ### ☐ Allied Tree Service · Southwick, MA · (413) 733-8733
 
@@ -173,7 +173,7 @@ Hi, this is Josh with ApexLeads in Blackstone. I was looking at Imperial Landsca
 
 ### ☐ Diverdi Property Solutions · Sterling, MA · (978) 962-1837
 
-Hi Michael, this is Josh with ApexLeads in Blackstone. I was looking at Diverdi Property Solutions's Facebook ads and noticed you've had the same reviews ad running since June. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
+Hi Michael, this is Josh with ApexLeads in Blackstone. I was looking at Diverdi Property Solutions' Facebook ads and noticed you've had the same reviews ad running since June. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
 
 ## C list: decent ads, easy upgrades
 
@@ -203,7 +203,7 @@ Hi, this is Josh with ApexLeads in Blackstone. I was looking at Premier Pavers &
 
 ### ☐ Staple Landscapes · Plainville, MA · (508) 479-7372
 
-Hi, this is Josh with ApexLeads in Blackstone. I was looking at Staple Landscapes's Facebook ads and noticed your only ad is the soil test offer, nothing for cleanups or hardscape. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
+Hi, this is Josh with ApexLeads in Blackstone. I was looking at Staple Landscapes' Facebook ads and noticed your only ad is the soil test offer, nothing for cleanups or hardscape. That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. Want me to send them over? Free, no strings. - Josh, (508) 492-9796
 
 ### ☐ Rutland Turf Care · Rutland/Marlborough, MA · (508) 886-3112
 

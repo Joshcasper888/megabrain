@@ -62,10 +62,11 @@ ALREADY = {"C&G Outdoor Services", "East Coast Tree Service", "AllGreen Lawn & T
 def text(l, seen):
     name, owner = re.sub(r"\s*\(.*?\)", "", l[0]), l[4]
     hi = f"Hi {owner}," if owner else "Hi,"
+    poss = name + ("'" if name.endswith("s") else "'s")
     if l[0] in ALREADY:
         return (f"{hi} Josh from ApexLeads again. Just following up on the Facebook ad ideas I sent for {name}. "
                 f"Here's a one-page sheet on how I work and what it costs. Happy to walk you through it in 5 minutes. (508) 492-9796")
-    return (f"{hi} this is Josh with ApexLeads in Blackstone. I was looking at {name}'s Facebook ads and noticed {seen}. "
+    return (f"{hi} this is Josh with ApexLeads in Blackstone. I was looking at {poss} Facebook ads and noticed {seen}. "
             f"That usually means fewer calls than you should be getting. I put together a couple ideas for what I'd change. "
             f"Want me to send them over? Free, no strings. - Josh, (508) 492-9796")
 
