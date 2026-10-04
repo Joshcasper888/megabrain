@@ -10,7 +10,7 @@ Every company below is running Facebook ads right now, and those ads have a clea
 "Hi, is this the owner? This is Josh with ApexLeads. I'm local, in Blackstone. Quick reason for the call: I was looking at the Facebook ads for [company] and noticed [THE PROBLEM]. I help landscaping and tree companies in New England fix that so the ads actually bring in calls. Do you have 2 minutes?"
 
 **If yes:** "What kind of jobs do you want more of right now?" Then offer to send them 2–3 free ad drafts.
-**Pricing if asked:** $30 per lead, 15% of jobs from the ads, or $600/month flat. Month to month, and ad spend goes on their own card.
+**Pricing if asked:** $50 per lead, 15% of jobs from the ads, or $900/month flat. Month to month, and ad spend goes on their own card.
 
 **If no, or they're busy:** "No problem. Can I text you a picture of what I'd change? No charge." Then text them and tell Claude so I can make the ad drafts.
 

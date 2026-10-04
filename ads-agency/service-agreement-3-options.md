@@ -14,13 +14,13 @@ The Client pays Meta directly with the Client's own card, at **$____ per day** (
 
 ## 3. Apex's fee (Client picks one)
 
-☐ **Option A: Pay per lead, $30 per lead.**
+☐ **Option A: Pay per lead, $50 per lead.**
 A "lead" is a form or message from a real person in the service area with a working name and phone number, asking about the Client's services. Duplicates, spam, wrong numbers and people outside the service area do not count. The Client can flag a bad lead within 7 days and it is removed from the bill. Apex invoices at the end of each month with a list of every lead billed.
 
 ☐ **Option B: Percentage, 15% of jobs from the ads.**
 15% of the amount the Client collects on jobs that came from an Apex ad lead. At the end of each month the Client sends a short list of those jobs (customer name and job total). Nothing else about the Client's business is shared. Apex invoices after the Client is paid for the job.
 
-☐ **Option C: Flat monthly fee, $____ per month.**
+☐ **Option C: Flat monthly fee, $900 per month.**
 A set fee billed at the start of each month, no matter how many leads come in. The Client never has to share revenue, job values, books or any other business numbers with Apex.
 
 **Payment:** Invoices are due within 15 days.

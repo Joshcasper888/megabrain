@@ -26,9 +26,9 @@ Thanks for the call today. Here's the plan we talked about.
 **Ad budget (paid by you, directly to Facebook):** $[__]/day, about $[__]/month. You can change it anytime.
 
 **My fee: pick one**
-- **A.** $30 per lead
+- **A.** $50 per lead
 - **B.** 15% of jobs that come from the ads
-- **C.** $[600] per month, flat
+- **C.** $900 per month, flat
 
 Month to month. No setup fee. You own your page and ad account.
 
@@ -52,8 +52,8 @@ apexroofingleads1@gmail.com · (508) 492-9796
 
 | Description | Qty | Rate | Amount |
 |---|---|---|---|
-| Facebook ad management, [Month] (Option C, flat) | 1 | $600.00 | $600.00 |
-| *or* Qualified leads, [dates] (Option A) | [#] | $30.00 | $[__] |
+| Facebook ad management, [Month] (Option C, flat) | 1 | $900.00 | $900.00 |
+| *or* Qualified leads, [dates] (Option A) | [#] | $50.00 | $[__] |
 | *or* 15% of jobs from ads, [dates] (Option B) – see job list below | 1 | 15% | $[__] |
 | **Total due** | | | **$[__]** |
 

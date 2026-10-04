@@ -1,7 +1,7 @@
 # ApexLeads Growth Plan: Getting to $100k/year
 
 **The math:** $100k a year is about $8,300 a month.
-- At $600/month per client → **about 14 clients**
+- At $900/month per client → **about 9–10 clients**
 - At $1,000/month per client → **about 9 clients**
 
 You don't need hundreds of clients. You need 10–15 who stay.
@@ -15,7 +15,7 @@ You don't need hundreds of clients. You need 10–15 who stay.
 ## Phase 2: Make the offer easier to say yes to
 5. **Stay in one niche and one region:** New England landscaping and tree companies.
 6. **Add speed-to-lead:** an instant auto-text to each lead ("Thanks! [Owner] will call you shortly"). It roughly doubles how many leads turn into jobs.
-7. **Raise prices after you have proof:** new clients at $800–1,000/month; keep the early clients at $600.
+7. **Raise prices after you have proof:** new clients at $1,200+/month; keep early clients at the price they signed at.
 8. **Winter push:** pitch landscapers on spring pre-booking and add roofers and snow removal so you earn year-round.
 
 ## Phase 3: Stop doing everything yourself (5+ clients)
