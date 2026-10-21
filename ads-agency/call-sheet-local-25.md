@@ -28,7 +28,6 @@ Phone numbers come from public business directories. If one is wrong, look the c
 
 | ☐ | Company | Town | Phone | Type |
 |---|---|---|---|---|
-| ☐ | Uxbridge Tree Service & DEM Landscape | Uxbridge | (508) 278-2335 | Tree + landscape |
 | ☐ | Shawn's Landscaping | Mendon | (774) 573-0326 | Landscape + hardscape |
 | ☐ | D&D Mulch and Landscape | Bellingham | (508) 478-1225 | Landscape |
 | ☐ | J Gudiel Landscape | Bellingham | (508) 380-0048 | Landscape |
